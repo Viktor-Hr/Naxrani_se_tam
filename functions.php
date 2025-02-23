@@ -10,7 +10,7 @@ function check_login($con) {
             return  $user_data ;
         }
     }
-    header("Location: login.php");
+    header("Location: Sign_up.php");
     exit();
 }
 function random_num($length) {

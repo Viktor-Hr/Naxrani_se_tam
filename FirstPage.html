@@ -6,33 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Нахрани се там - Вкусно!</title>
     <link rel="stylesheet" href="FirstPage.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    
+  
 </head>
+
 <body>
 
 <div class="square">
-
     <div class="button"> 
-            <a href="Index.html" class="button-link">Начало</a>
+        <a href="StartPage.html" class="button-link">Начало</a>
     </div>
     <div class="button2"> 
-        <a href="LoginPage.html" class="button-link">Незнам</a>
+        <a href="rec-res.php" class="button-link">За нас</a>
     </div>
     <div class="button4"> 
-            <a href="Index.html" class="button-link">За нас</a>
+        <a href="Login.php" class="button-link">Вписване</a>
     </div>
     <div class="button5"> 
-        <a href="LoginPage.html" class="button-link">Вписване</a>
+        <a href="Sign_up.php" class="button-link">Влизане</a>
     </div>
-
 </div>
 
-<div class="container">
-    <img src="VarnaPlaceholder.png" alt="placeholder">
-</div>
+<!-- Map Container (where the image was) -->
+<div id="map"></div>
+
+<!-- Leaflet JavaScript from CDN -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+    // Initialize map
+    var map = L.map('map').setView([43.217715, 27.905228], 13); // Coordinates for map center (adjust as needed)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+</script>
 
 </body>
 </html>
-
