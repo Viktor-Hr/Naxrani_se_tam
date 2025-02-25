@@ -24,4 +24,16 @@ function random_num($length) {
     }
     return $text;
 }
+function increasing_num($con){
+    $query = "SELECT MAX(id) AS max_id FROM restaurants"; 
+    $result = mysqli_query($con, $query);
+    
+    if ($row = mysqli_fetch_assoc($result)) {
+        return $row['max_id'] + 1; 
+    }
+    
+    return 1;
+
+
+}
 ?>

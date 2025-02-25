@@ -23,13 +23,13 @@
         <a href="StartPage.html" class="button-link">Начало</a>
     </div>
     <div class="button2"> 
-        <a href="rec-res.php" class="button-link">За нас</a>
+        <a href="rec-res.php" class="button-link">Препоръчване на Ресторант</a>
     </div>
     <div class="button4"> 
-        <a href="Login.php" class="button-link">Вписване</a>
+        <a href="LoginPage.php" class="button-link">Влизане</a>
     </div>
     <div class="button5"> 
-        <a href="Sign_up.php" class="button-link">Влизане</a>
+        <a href="Sign_up.php" class="button-link">Регистриране</a>
     </div>
 </div>
 
@@ -38,14 +38,50 @@
 
 <!-- Leaflet JavaScript from CDN -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+      
+      <script>
+      
+      document.addEventListener("DOMContentLoaded", function () {
+    fetch('get-data.php')
+        .then(response => response.json())
+        .then(data => {
+            if (!Array.isArray(data)) {  
+                console.error("Expected an array but got:", data);
+                return;
+            }
 
-<script>
-    // Initialize map
-    var map = L.map('map').setView([43.217715, 27.905228], 13); // Coordinates for map center (adjust as needed)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+            // Initialize the map
+            var map = L.map('map').setView([43.217715, 27.905228], 13); 
+
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Loop through restaurant data and add markers
+            data.forEach(restaurant => {
+                let name = restaurant.name;
+                let menu = restaurant.menu;
+                let address = restaurant.address;
+                let phone = restaurant.phone;
+                let longitude = parseFloat(restaurant.longitude); // Convert to number
+                let latitude = parseFloat(restaurant.latitude);   // Convert to number
+
+                // Ensure valid coordinates
+                if (!isNaN(latitude) && !isNaN(longitude)) {
+                    // Create marker and add to map
+                    L.marker([latitude, longitude]).addTo(map)
+                        .bindPopup(`<b>${name}</b><br>📜 ${menu}<br>📍 ${address}<br>📞 ${phone}`);
+                } else {
+                    console.warn("Invalid coordinates for restaurant:", restaurant);
+                }
+            });
+        })
+        .catch(error => console.error("Fetch error:", error));
+});
 </script>
+
+
 
 </body>
 </html>

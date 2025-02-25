@@ -1,23 +1,28 @@
+
 <?php
 session_start();
 include("connection.php");
 include("functions.php");
-
-if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
-    $user_name = $_POST['username'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
     $password = $_POST['password'];
-    if (!empty($user_name) && !empty($password)) {
-        $user_id = random_num(20);
-        $query = "INSERT INTO users (user_id, user_name, password) VALUES ('$user_id', '$user_name', '$password')";
-        mysqli_query($con, $query);
-        header("Location: LoginPage.php");
-        die;
+    $query = "SELECT * FROM users WHERE user_name='$username' LIMIT 1";
+    $result = mysqli_query($con, $query);
+    if ($result && mysqli_num_rows($result) > 0) {
+        $user_data = mysqli_fetch_assoc($result);
+        if ($user_data['password'] === $password) {
+            $_SESSION['user_id'] = $user_data['user_id'];
+            $_SESSION['username'] = $user_data['username'];
+            header("Location: StartPage.html");
+            exit();
+        } else {
+            echo "Грешна парола или име!";
+        }
     } else {
-        echo "Моля сложете валидна информация.";
+        echo "Грешна парола или име!";
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +31,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Нахрани се там - Вкусно!</title>
-    <link rel="stylesheet" href="Sigh_up.css">
+    <link rel="stylesheet" href="LoginPage.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
@@ -55,13 +60,10 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="post">
         <input id="text" type="text" name="username" placeholder="Име" required><br>
         <input id="text" type="password" name="password" placeholder="Парола" required><br>
-       
-        <input id="button" type="submit" value="Signup"><br>
-    
+        <input id="button" type="submit" value="Login"><br>
     </form>
-    <a href="LoginPage.php">Натисни да влезеш</a>
+    <a href="Sign_up.php">Натисни да се регистрирате</a>
 </div>
 
 </body>
 </html>
-

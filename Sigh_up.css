@@ -62,8 +62,10 @@ h1 {
 .button-link:hover {
     background-color: #e0c9a6;
   }
-  
-.amatic-sc-regular {
+
+
+
+  .amatic-sc-regular {
       font-family: "Amatic SC", serif;
       font-weight: 400;
       font-style: normal;
@@ -82,3 +84,46 @@ h1 {
     left: 0;
 
 }
+
+#box {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position:relative;
+      top: 30% ;
+      left :15% ;
+}
+  
+  /* Input fields */
+  #text {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 18px;
+      outline: none;
+      transition: border-color 0.3s;
+  }
+  
+  #text:focus {
+      border-color: #ff7f50;
+  }
+  a {
+      display: block;
+      margin-top: 10px;
+      color: #c69c6d;
+      text-decoration: none;
+      font-size: 25px;
+  }
+  
+  a:hover {
+      text-decoration: underline;
+  }
+  
