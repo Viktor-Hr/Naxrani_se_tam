@@ -53,7 +53,14 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
         <a href="" class="button-link">Q&A</a>
     </div>
     <div class="button5"> 
-        <a href="" class="button-link">Профил</a>
+    <div class="dropdown">
+            <button class="button-menu">Профил</button>
+            <div class="button-dropdown">
+                <a href="LoginPage.php">Влизане</a>
+                <a href="Sign_up.php">Регистриране</a>
+                <a href="logout.php">Излизане</a>
+            </div>
+        </div>
     </div>
 </div>
 

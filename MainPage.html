@@ -31,9 +31,17 @@
     <div class="button4"> 
         <a href="" class="button-link">Q&A</a>
     </div>
-    <div class="button5"> 
-        <a href="" class="button-link">Профил</a>
+    <div class="button5">
+        <div class="dropdown">
+            <button class="button-menu">Профил</button>
+            <div class="button-dropdown">
+                <a href="LoginPage.php">Влизане</a>
+                <a href="Sign_up.php">Регистриране</a>
+                <a href="logout.php">Излизане</a>
+            </div>
+        </div>
     </div>
+    
 </div>
 
 <div class="rectangle"></div>
@@ -43,15 +51,22 @@
 
 
 
-<!-- Map Container (where the image was) -->
+<div id="restaurant-info">
+    <h2 id="res-name"></h2>
+    <p><strong>Меню:</strong> <span id="res-menu"></span></p>
+    <p><strong>Адрес:</strong> <span id="res-address"></span></p>
+    <p><strong>Телефон:</strong> <span id="res-phone"></span></p>
+</div>
+
+<!-- Map Container -->
 <div id="map"></div>
 
 <!-- Leaflet JavaScript from CDN -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-      
-      <script>
-      document.addEventListener("DOMContentLoaded", function () {
-    var map = L.map('map').setView([51.505, -0.09], 13);
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var map = L.map('map').setView([43.215, 27.907], 14);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -62,20 +77,35 @@
         .then(response => response.json())
         .then(data => {
             data.forEach(restaurant => {
-                L.marker([restaurant.latitude, restaurant.longitude]).addTo(map)
-                    .bindPopup(`<b>${restaurant.name}</b><br>
-                                <strong>Меню:</strong> ${restaurant.menu}<br>
-                                <strong>Адрес:</strong> ${restaurant.address}<br>
-                                <strong>Телефон:</strong> ${restaurant.phone}`);
+                var marker = L.marker([restaurant.latitude, restaurant.longitude]).addTo(map);
+
+                // Event listener for clicking the marker
+                marker.on('click', function () {
+                    document.getElementById("restaurant-info").style.display = "block";
+                    document.getElementById("res-name").innerText = restaurant.name;
+                    document.getElementById("res-menu").innerText = restaurant.menu;
+                    document.getElementById("res-address").innerText = restaurant.address;
+                    document.getElementById("res-phone").innerText = restaurant.phone;
+                });
             });
         })
         .catch(error => console.error('Error fetching restaurant data:', error));
 });
-
-  
 </script>
+
+
+
+
 
 
 
 </body>
 </html>
+
+
+
+
+
+
+
+

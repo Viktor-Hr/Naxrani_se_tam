@@ -159,3 +159,54 @@ h1
     transform: scale(1.05);
     transition-duration: 500ms;
 }
+.button-menu{
+    display: inline-block;
+    padding: 10px 66px;
+    margin-left: 44px;
+    background-color: #fef5ed;
+    color: #c69c6d;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 50px;
+    transition: background-color 0.3s ease;
+    font-family: 'Hangyaboly';
+    border: none;
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  
+  .button-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fef5ed;
+    min-width: 200px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 10px;
+    z-index: 1000;
+  }
+  
+  
+  .button-dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #c69c6d;
+    font-size: 24px;
+  }
+  
+  
+  .button-dropdown a:hover {
+    background-color: #e0c9a6;
+  }
+  
+  
+  .dropdown:hover .button-dropdown {
+    display: block;
+  }
+  

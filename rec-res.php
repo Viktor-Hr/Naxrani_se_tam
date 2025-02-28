@@ -60,12 +60,29 @@ else{
 
 <div class="square">
     <div class="button"> 
-        <a href="Index.html" class="button-link">Върни ме</a>
+        <a href="Index.html" class="button-link">Начало</a>
     </div>
     <div class="button2"> 
-        <a href="MainPage.html" class="button-link">Главна страница</a>
+        <a href="rec-res.php" class="button-link">Предложи</a>
+    </div>
+    <div class="button3"> 
+        <a href="" class="button-link">За нас</a>
+    </div>
+    <div class="button4"> 
+        <a href="" class="button-link">Q&A</a>
+    </div>
+    <div class="button5"> 
+    <div class="dropdown">
+            <button class="button-menu">Профил</button>
+            <div class="button-dropdown">
+                <a href="LoginPage.php">Влизане</a>
+                <a href="Sign_up.php">Регистриране</a>
+                <a href="logout.php">Излизане</a>
+            </div>
+        </div>
     </div>
 </div>
+
 
 
 
@@ -83,7 +100,11 @@ else{
         
         <input id="button" type="submit" value="Submit"><br>
     </form>
-   <a href="logout.php">Излез</a>
+    <div class="ab">
+   
+    <a href="logout.php" class="ab-link" >Излез</a>
+</div>
+
 </div>
 
 </body>
