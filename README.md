@@ -1,1 +1,0 @@
-# Naxrani_se_tam
