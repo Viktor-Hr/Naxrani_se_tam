@@ -6,81 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Нахрани се там - Вкусно!</title>
     <link rel="stylesheet" href="Index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Leaflet CSS from CDN -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    
-  
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
+<div class="h1"></div>
+
+
 <div class="square">
+
     <div class="button"> 
-        <a href="StartPage.html" class="button-link">Начало</a>
+        <a href="MainPage.html" class="button-link">Кликни тук</a>
     </div>
-    <div class="button2"> 
-        <a href="rec-res.php" class="button-link">Предложи</a>
-    </div>
-    <div class="button3"> 
-        <a href="LoginPage.php" class="button-link">Влизане</a>
-    </div>
-    <div class="button4"> 
-        <a href="Sign_up.php" class="button-link">Регистриране</a>
-    </div>
-    <div class="button5"> 
-        <a href="Sign_up.php" class="button-link">За нас</a>
-    </div>
-    <div class="button6"> 
-        <a href="Sign_up.php" class="button-link">Q&A</a>
-    </div>
+ 
 </div>
 
+<div class="SuggestionButton"> 
+    <a href="rec-res.php" class="SuggestionButton-link">Предложи заведение</a>
+</div>
+
+<!-- <div class="AccountButton"> 
+    <a href="Sign_up.php" class="AccountButton-link">Акаунт</a>
+</div> -->
+
+<img src="account.png" alt="Account" class="img3">
+<img src="SuggestionIcon.png" alt="Suggestion" class="img2">
+<img src="Logo.png" alt="Logo" class="img">
 
 
+<div class="account-menu">
+    <button class="account-button">Акаунт</button>
+    <div class="account-dropdown">
 
+            <a href="LoginPage.php">Login</a>
+            <a href="Sign_up.php">Sign Up</a>
 
+            <a href="logout.php">Logout</a>
 
-
-
-
-
-
-<!-- Map Container (where the image was) -->
-<div id="map"></div>
-
-<!-- Leaflet JavaScript from CDN -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-      
-      <script>
-      document.addEventListener("DOMContentLoaded", function () {
-    var map = L.map('map').setView([51.505, -0.09], 13);
-
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    // Fetch restaurant data from the server
-    fetch('get-data.php')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(restaurant => {
-                L.marker([restaurant.latitude, restaurant.longitude]).addTo(map)
-                    .bindPopup(`<b>${restaurant.name}</b><br>
-                                <strong>Меню:</strong> ${restaurant.menu}<br>
-                                <strong>Адрес:</strong> ${restaurant.address}<br>
-                                <strong>Телефон:</strong> ${restaurant.phone}`);
-            });
-        })
-        .catch(error => console.error('Error fetching restaurant data:', error));
-});
-
-  
-</script>
-
+    </div>
+</div>
 
 
 </body>

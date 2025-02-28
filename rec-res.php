@@ -60,10 +60,10 @@ else{
 
 <div class="square">
     <div class="button"> 
-        <a href="StartPage.html" class="button-link">Начало</a>
+        <a href="Index.html" class="button-link">Върни ме</a>
     </div>
     <div class="button2"> 
-        <a href="StartPage.html" class="button-link">Върни ме</a>
+        <a href="MainPage.html" class="button-link">Главна страница</a>
     </div>
 </div>
 
