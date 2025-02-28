@@ -41,10 +41,19 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="square">
     <div class="button"> 
-        <a href="Index.html" class="button-link">Върни ме</a>
+        <a href="Index.html" class="button-link">Начало</a>
     </div>
     <div class="button2"> 
-        <a href="MainPage.html" class="button-link">Главна страница</a>
+        <a href="rec-res.php" class="button-link">Предложи</a>
+    </div>
+    <div class="button3"> 
+        <a href="" class="button-link">За нас</a>
+    </div>
+    <div class="button4"> 
+        <a href="" class="button-link">Q&A</a>
+    </div>
+    <div class="button5"> 
+        <a href="" class="button-link">Профил</a>
     </div>
 </div>
 
@@ -55,11 +64,15 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
         <input id="text" type="text" name="username" placeholder="Име" required><br>
         <input id="text" type="password" name="password" placeholder="Парола" required><br>
        
-        <input id="button" type="submit" value="Signup"><br>
+        <input id="button" type="submit" value="Регистрация"><br>
     
     </form>
-    <a href="LoginPage.php">Натисни да влезеш</a>
+    <div class="ab">
+    <a href="LoginPage.php" class="ab-link">Влизане</a>
+    </div>
 </div>
+
+
 
 </body>
 </html>

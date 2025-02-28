@@ -36,20 +36,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
-        
-
-    </style>
 </head>
 
 <body>
 
 <div class="square">
     <div class="button"> 
-        <a href="Index.html" class="button-link">Върни ме</a>
+        <a href="Index.html" class="button-link">Начало</a>
     </div>
     <div class="button2"> 
-        <a href="MainPage.html" class="button-link">Главна страница</a>
+        <a href="rec-res.php" class="button-link">Предложи</a>
+    </div>
+    <div class="button3"> 
+        <a href="" class="button-link">За нас</a>
+    </div>
+    <div class="button4"> 
+        <a href="" class="button-link">Q&A</a>
+    </div>
+    <div class="button5"> 
+        <a href="" class="button-link">Профил</a>
     </div>
 </div>
 
@@ -60,9 +65,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="post">
         <input id="text" type="text" name="username" placeholder="Име" required><br>
         <input id="text" type="password" name="password" placeholder="Парола" required><br>
-        <input id="button" type="submit" value="Login"><br>
+        <input id="button" type="submit" value="Влизане"><br>
     </form>
-    <a href="Sign_up.php">Натисни да се регистрирате</a>
+
+    <div class="ab">
+        <a href="Sign_up.php" class="ab-link">Регистрация</a>
+    </div>
 </div>
 
 </body>

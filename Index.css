@@ -71,6 +71,7 @@ body
 
 .button-link:hover {
   background-color: #e0c9a6;
+  transform: scale(1.05);
 }
 
 .SuggestionButton {

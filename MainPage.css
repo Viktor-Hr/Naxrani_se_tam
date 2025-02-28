@@ -1,65 +1,78 @@
 *{
-    margin: 0;
-    padding: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
+  margin: 0;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+@font-face {
+  font-family: 'Hangyaboly';
+  src: url('https://font-public.canva.com/YADiq7Ys73A/0/Hangyaboly-Regular_fix482404332371740184.2b0f92b24364eee9a859be106528c3fe.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 body 
 {
-    background-color: #fef5ed;  
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: scroll;
-    height: 100vh;
-    width: 100%;
-    margin: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    font-family: Amatic SC;
+  background-color: #fef5ed;  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  height: 100vh;
+  width: 100%;
+  margin: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-family: 'Hangyaboly';
+  overflow: hidden;
 }
 h1
 {
-    font-size: 11vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vw;
-    margin-top: 14%;
-    color: rgb(0, 0, 0);
-    z-index: 2;
-    position: relative;
+  font-size: 11vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vw;
+  margin-top: 14%;
+  color: rgb(0, 0, 0);
+  z-index: 2;
+  position: relative;
 }
 
-  .square 
-{
-    width: 100%;
-    height: 15vh;
-    background-color: #c69c6d;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0px;
-    position: fixed;
+.square {
+  width: 97.2%;
+  margin-left: 1.4%;
+  top: 21px;
+  height: 15vh;
+  background-color: #c69c6d;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px;
+  position: fixed;
+  border-radius: 45px;
 }
-  .container {
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 220px;
+
+.container {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 220px;
 }
-  .container img {
-    border-radius: 100px;
-    width: 65%;
-    height: auto;
+
+.container img {
+  border-radius: 100px;
+  width: 65%;
+  height: auto;
 }
+
 .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .button-link {
   display: inline-block;
   padding: 10px 66px;
@@ -74,47 +87,16 @@ h1
 
 .button-link:hover {
   background-color: #e0c9a6;
+  transform: scale(1.05);
 }
 
 .box{
   margin-top: 100;
 }
 
-#map { height: 700px; width: 50%;
+#map { height: 700px; width: 46%;
   position:relative;
-  top: 18%;
-  left: 25%;
+  top: 20%;
+  left: 27%;
   border-radius: 40px;
-}
-
-.AccountButton {
-  position: absolute;
-  top: 11px;
-  left: 8px;
-  z-index: 1;
-}
-.AccountButton-link {
-  display: inline-block;
-  padding: 6px 28px;
-  padding-left: 60px;
-  background-color: #fef5ed;
-  color: #c69c6d;
-  text-decoration: none;
-  border-radius: 90px;
-  font-size: 35px;
-  transition: background-color 0.3s ease;
-}
-
-.AccountButton-link:hover {
-  background-color: #e0c9a6;
-}
-
-.img3 {
-  width: 2.3%;
-  height: auto;
-  z-index: 10;
-  position: absolute;
-  top: 18px;
-  left: 2000px;
-  z-index: 2;
 }
