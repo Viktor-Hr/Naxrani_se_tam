@@ -63,7 +63,7 @@ else{
         <a href="StartPage.html" class="button-link">Начало</a>
     </div>
     <div class="button2"> 
-        <a href="FirstPage.html" class="button-link">Върни ме</a>
+        <a href="StartPage.html" class="button-link">Върни ме</a>
     </div>
 </div>
 

@@ -4,6 +4,12 @@
   margin-left: 0;
   margin-right: 0;
 }
+@font-face {
+  font-family: 'Hangyaboly';
+  src: url('https://font-public.canva.com/YADiq7Ys73A/0/Hangyaboly-Regular_fix482404332371740184.2b0f92b24364eee9a859be106528c3fe.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 body 
 {
     background-color: #fef5ed;  
@@ -16,20 +22,20 @@ body
     margin: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    font-family: Amatic SC;
+    font-family: 'Hangyaboly';
     overflow: hidden;
 }
-h1
+.h1
 {
-    font-size: 11vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vw;
-    margin-top: 14%;
-    color: rgb(0, 0, 0);
-    z-index: 2;
-    position: relative;
+  font-size: 50px;
+  height: auto;
+  color: #fef5ed;
+  z-index: 10;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  font-family: 'Hangyaboly', sans-serif;
+    
 }
 .square 
 {
@@ -70,7 +76,7 @@ h1
 .SuggestionButton {
   position: absolute;
   top: 90vh;
-  left: 80%;
+  left: 73%;
   z-index: 2;
 }
 .SuggestionButton-link {
@@ -95,32 +101,42 @@ h1
   z-index: 1;
   position: absolute;
   top: 90.7vh;
-  left: 81%;
+  left: 74%;
   z-index: 2;
 }
 
-/*.AccountButton {
+.AccountButton {
   position: absolute;
-  top: 90vh;
-  left: 80%;
+  top: 11px;
+  left: 8px;
   z-index: 2;
 }
 .AccountButton-link {
   display: inline-block;
   padding: 6px 28px;
-  padding-left: 80px;
+  padding-left: 60px;
   background-color: #fef5ed;
   color: #c69c6d;
   text-decoration: none;
   border-radius: 90px;
-  font-size: 40px;
+  font-size: 35px;
   transition: background-color 0.3s ease;
 }
 
 .AccountButton-link:hover {
   background-color: #e0c9a6;
 }
-  */
+
+.img3 {
+  width: 2.3%;
+  height: auto;
+  z-index: 1;
+  position: absolute;
+  top: 19px;
+  left: 20px;
+  z-index: 2;
+}
+
 
 .amatic-sc-regular {
     font-family: "Amatic SC", serif;

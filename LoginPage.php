@@ -46,10 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="square">
     <div class="button"> 
-        <a href="StartPage.html" class="button-link">Начало</a>
+        <a href="StartPage.html" class="button-link">Върни ме</a>
     </div>
     <div class="button2"> 
-        <a href="FirstPage.html" class="button-link">Върни ме</a>
+        <a href="Index.html" class="button-link">Главна страница</a>
     </div>
 </div>
 

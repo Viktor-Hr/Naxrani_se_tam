@@ -77,9 +77,9 @@ h1
 .box{
   margin-top: 100;
 }
-#map { height: 700px; width: 70%;
+#map { height: 700px; width: 50%;
   position:relative;
   top: 18%;
-  left: 15%;
+  left: 25%;
   border-radius: 40px;
 }
