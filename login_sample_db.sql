@@ -41,10 +41,7 @@ CREATE TABLE `restaurants` (
 -- Dumping data for table `restaurants`
 --
 
-INSERT INTO `restaurants` (`id`, `name`, `menu`, `address`, `phone`, `longitude`, `latitude`) VALUES
-(1, 'rtjjj', 'rtjrthjrt', 'jyjrtj', 'gfjrjh', 23.45435, 56.78767),
-(2, 'ПГКМКС \"Акад. Благовест Сендов\"', 'училище мачилище\r\n_\r\n_\r\n_\r\n_\r\n_\r\n_\r\n__\r\n__\r\n___', 'ПГКМКС \"Акад. Благовест Сендов\"', '000', 43.224119, 27.938138),
-(3, 'ЯВ3РВ3Т', 'В34Т', 'В34Т', '4Т', 27.938138, 43.224119);
+
 
 -- --------------------------------------------------------
 
@@ -64,8 +61,6 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user_id`, `user_name`, `password`, `date`) VALUES
-(1, 5271386768783, 'viko', '1234', '0000-00-00');
 
 --
 -- Indexes for dumped tables
