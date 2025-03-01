@@ -94,8 +94,8 @@ else{
         <textarea id="text" type="text" name="menu" placeholder="Меню" style="height:200px" required></textarea><br>
         <input id="text" type="text" name="address" placeholder="Адрес" required><br>
         <input id="text" type="text" name="phone" placeholder="Телефон" required><br>
-        <input id="text" type="number" step="0.00000001" name="long" placeholder="Географска ширина" required><br>
-        <input id="text" type="number" step="0.00000001" name="lati" placeholder="Географска дължина" required><br>
+        <input id="text" type="number" step="0.00000001" name="lati" placeholder="Географска ширина" required><br>
+        <input id="text" type="number" step="0.00000001" name="long" placeholder="Географска дължина" required><br>
         
         
         <input id="button" type="submit" value="Submit"><br>
