@@ -24,7 +24,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
         
         $query = "INSERT INTO restaurants (id, name, menu, address, phone, longitude, latitude) VALUES ('$id', '$name', '$menu', '$address', '$phone', '$long', '$lati')";
         mysqli_query($con, $query);
-        header("Location: rec-res.php");
+        header("Location: MainPage.html");
         die;
     } else {
         echo "Моля сложете валидна информация.";
@@ -60,7 +60,7 @@ else{
 
 <div class="square">
     <div class="button"> 
-        <a href="Index.html" class="button-link">Начало</a>
+        <a href="index.html" class="button-link">Начало</a>
     </div>
     <div class="button2"> 
         <a href="rec-res.php" class="button-link">Предложи</a>

@@ -41,7 +41,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="square">
     <div class="button"> 
-        <a href="Index.html" class="button-link">Начало</a>
+        <a href="index.html" class="button-link">Начало</a>
     </div>
     <div class="button2"> 
         <a href="rec-res.php" class="button-link">Предложи</a>
