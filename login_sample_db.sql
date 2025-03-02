@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2025 at 02:50 PM
+-- Generation Time: Mar 01, 2025 at 10:21 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,16 +32,10 @@ CREATE TABLE `restaurants` (
   `name` varchar(100) NOT NULL,
   `menu` text NOT NULL,
   `address` varchar(100) NOT NULL,
-  `phone` varchar(100) NOT NULL,
-  `longitude` double NOT NULL,
-  `latitude` double NOT NULL
+  `phone` varchar(20) NOT NULL,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `restaurants`
---
-
-
 
 -- --------------------------------------------------------
 
@@ -54,13 +48,8 @@ CREATE TABLE `users` (
   `user_id` bigint(20) NOT NULL,
   `user_name` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `date` date NOT NULL
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
 
 --
 -- Indexes for dumped tables
@@ -77,7 +66,9 @@ ALTER TABLE `restaurants`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`,`user_name`,`date`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `date` (`date`),
+  ADD KEY `user_name` (`user_name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -87,13 +78,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `restaurants`
 --
 ALTER TABLE `restaurants`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63452;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
