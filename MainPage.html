@@ -28,10 +28,8 @@
     <div class="button3"> 
         <a href="" class="button-link">За нас</a>
     </div>
-    <div class="button4"> 
-        <a href="" class="button-link">Q&A</a>
-    </div>
-    <div class="button5">
+      
+    <div class="button4">
         <div class="dropdown">
             <button class="button-menu">Профил</button>
             <div class="button-dropdown">
@@ -58,10 +56,10 @@
     <p><strong>Телефон:</strong> <span id="res-phone"></span></p>
 </div>
 
-<!-- Map Container -->
+
 <div id="map"></div>
 
-<!-- Leaflet JavaScript from CDN -->
+
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script>
@@ -72,14 +70,16 @@ document.addEventListener("DOMContentLoaded", function () {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Fetch restaurant data from the server
     fetch('get-data.php')
         .then(response => response.json())
         .then(data => {
             data.forEach(restaurant => {
+                if ( restaurant.ver == 'yes-var' ){
+                
+                
                 var marker = L.marker([restaurant.latitude, restaurant.longitude]).addTo(map);
 
-                // Event listener for clicking the marker
+               
                 marker.on('click', function () {
                     document.getElementById("restaurant-info").style.display = "block";
                     document.getElementById("res-name").innerText = restaurant.name;
@@ -87,6 +87,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("res-address").innerText = restaurant.address;
                     document.getElementById("res-phone").innerText = restaurant.phone;
                 });
+            }
+           
+           
+           
             });
         })
         .catch(error => console.error('Error fetching restaurant data:', error));

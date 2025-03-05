@@ -36,4 +36,3 @@ function increasing_num($con){
 
 
 }
-?>

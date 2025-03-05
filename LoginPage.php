@@ -10,9 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = mysqli_query($con, $query);
     if ($result && mysqli_num_rows($result) > 0) {
         $user_data = mysqli_fetch_assoc($result);
+        
         if ($user_data['password'] === $password) {
             $_SESSION['user_id'] = $user_data['user_id'];
-            $_SESSION['username'] = $user_data['username'];
+            $_SESSION["username"]= $user_data['user_name'];
+           
+  
             header("Location: index.html");
             exit();
         } else {
@@ -50,10 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="button3"> 
         <a href="" class="button-link">За нас</a>
     </div>
+
     <div class="button4"> 
-        <a href="" class="button-link">Q&A</a>
-    </div>
-    <div class="button5"> 
     <div class="dropdown">
             <button class="button-menu">Профил</button>
             <div class="button-dropdown">

@@ -7,8 +7,9 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $user_name = $_POST['username'];
     $password = $_POST['password'];
     if (!empty($user_name) && !empty($password)) {
+        $role = 'user';
         $user_id = random_num(20);
-        $query = "INSERT INTO users (user_id, user_name, password) VALUES ('$user_id', '$user_name', '$password')";
+        $query = "INSERT INTO users (user_id, user_name, password , role) VALUES ('$user_id', '$user_name', '$password' , '$role')";
         mysqli_query($con, $query);
         header("Location: LoginPage.php");
         die;
@@ -16,6 +17,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Моля сложете валидна информация.";
     }
 }
+
 ?>
 
 
@@ -49,10 +51,8 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="button3"> 
         <a href="" class="button-link">За нас</a>
     </div>
+   
     <div class="button4"> 
-        <a href="" class="button-link">Q&A</a>
-    </div>
-    <div class="button5"> 
     <div class="dropdown">
             <button class="button-menu">Профил</button>
             <div class="button-dropdown">

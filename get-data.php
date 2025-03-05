@@ -2,7 +2,7 @@
 
 include("connection.php");
 
-$query = "SELECT name, menu, address, phone, latitude, longitude FROM restaurants";
+$query = "SELECT name, menu, address, phone, latitude, longitude, ver FROM restaurants";
 $result = mysqli_query($con, $query);
 
 $restaurants = [];
