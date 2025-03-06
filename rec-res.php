@@ -90,8 +90,6 @@ if (isset($_SESSION["username"])) {
         echo '<div class="button3"> 
                 <a href="veri.php" class="button-link">Валидиране</a>
               </div>';
-    } else {
-        echo "Your role: " . (isset($role) ? $role : 'undefined');
     }
     ?>
     
