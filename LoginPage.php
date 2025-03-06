@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a href="rec-res.php" class="button-link">Предложи</a>
     </div>
     <div class="button3"> 
-        <a href="" class="button-link">За нас</a>
+        <a href="AboutUsPage.html" class="button-link">За нас</a>
     </div>
 
     <div class="button4"> 
