@@ -82,7 +82,7 @@ if (isset($_SESSION["username"])) {
     </div>
     
     <div class="button2"> 
-        <a href="" class="button-link">За нас</a>
+        <a href="AboutUsPage.html" class="button-link">За нас</a>
     </div>
     
     <?php
