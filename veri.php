@@ -88,14 +88,14 @@ $result = $con->query($sql);
             <p><strong>Address:</strong> {$restaurant['address']}</p>
             <p><strong>Phone:</strong> {$restaurant['phone']}</p>
             <div class='buttons'>
-                <a href='approve-r.php?id={$restaurant['id']}' class='approve-btn'>Approve</a>
-                <a href='delete-r.php?id={$restaurant['id']}' class='delete-btn' >Delete</a>
+                <a href='approve-r.php?id={$restaurant['id']}' class='approve-btn'>Одобри</a>
+                <a href='delete-r.php?id={$restaurant['id']}' class='delete-btn' >Изтрий</a>
             </div>
         </div>
         ";
     }
 } else {
-    echo "<p>No unapproved restaurants found.</p>";
+    echo "<p>Не има намерени не одобрени ресторанте</p>";
 }
     ?>
 </div>
