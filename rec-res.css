@@ -159,6 +159,7 @@ h1
     transform: scale(1.05);
     transition-duration: 500ms;
 }
+
 .button-menu{
     display: inline-block;
     padding: 10px 66px;
@@ -173,6 +174,10 @@ h1
     border: none;
   }
   
+  .button-menu:hover {
+    background-color: #e0c9a6;
+    transform: scale(1.05);
+  }
   
   .dropdown {
     position: relative;

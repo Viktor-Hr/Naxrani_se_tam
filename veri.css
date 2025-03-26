@@ -87,6 +87,10 @@ h1 {
     font-family: 'Hangyaboly';
     border: none;
 }
+.button-menu:hover {
+    background-color: #e0c9a6;
+    transform: scale(1.05);
+  }
 
 .dropdown {
     position: relative;
