@@ -21,7 +21,7 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
             $query = "INSERT INTO restaurants (id, name, menu, address, phone, longitude, latitude, ver) 
                       VALUES ('$id', '$name', '$menu', '$address', '$phone', '$long', '$lati', '$ver')";
             mysqli_query($con, $query);
-            header("Location: MainPage.html");
+            header("Location: MainPage.php");
             die;
         } else {
             echo "Моля сложете валидна информация.";
@@ -69,13 +69,15 @@ if (isset($_SESSION["username"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+ 
 </head>
 
 <body>
+<style>
 
+
+</style>
 <div class="square">
     <div class="button"> 
         <a href="index.html" class="button-link">Начало</a>
@@ -105,20 +107,59 @@ if (isset($_SESSION["username"])) {
     </div>
 </div>
 
-<div id="box">   
-    <form method="post">
-        <input id="text" type="text" name="name" placeholder = "Име на Ресторанта" required><br>
-        <textarea id="text" type="text" name="menu" placeholder="Меню" style="height:200px" required></textarea><br>
-        <input id="text" type="text" name="address" placeholder="Адрес" required><br>
-        <input id="text" type="text" name="phone" placeholder="Телефон" required><br>
-        <input id="text" type="number" step="0.00000001" name="lati" placeholder="Географска ширина" required><br>
-        <input id="text" type="number" step="0.00000001" name="long" placeholder="Географска дължина" required><br>
-        <input id="button" type="submit" value="Изпрати"><br>
-    </form>
-    <div class="ab">
-        <a href="logout.php" class="ab-link" >Излез</a>
+<div class="content-wrapper">
+    <div id="map"></div>
+    <div class="form-container">   
+        <form method="post">
+            <input id="text" type="text" name="name" placeholder = "Име на Ресторанта" required><br>
+            <textarea id="text" type="text" name="menu" placeholder="Меню" style="height:200px" required></textarea><br>
+            <input id="text" type="text" name="address" placeholder="Адрес" required><br>
+            <input id="text" type="text" name="phone" placeholder="Телефон" required><br>
+            <input id="text" type="number" step="0.00000001" name="lati" placeholder="Географска ширина" required><br>
+            <input id="text" type="number" step="0.00000001" name="long" placeholder="Географска дължина" required><br>
+            <input id="button" type="submit" value="Изпрати"><br>
+        </form>
+        <div class="ab">
+            <a href="logout.php" class="ab-link" >Излез</a>
+        </div>
     </div>
 </div>
 
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+var ResIcon = L.icon({
+    iconUrl: 'Resicon.png',
+
+    iconSize:     [30, 45],
+
+});
+
+
+    var map = L.map('map').setView([43.215, 27.907], 14);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    let marker;
+
+map.on('click', function(e) {
+    const { lat, lng } = e.latlng;
+
+  
+    if (marker) {
+        map.removeLayer(marker);
+    }
+
+
+    marker = L.marker([lat, lng], { icon: ResIcon }).addTo(map);
+
+    document.querySelector('input[name="lati"]').value = lat.toFixed(8);
+    document.querySelector('input[name="long"]').value = lng.toFixed(8);
+});
+
+</script>
 </body>
 </html>
