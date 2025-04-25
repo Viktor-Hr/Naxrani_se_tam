@@ -159,22 +159,102 @@ h1
 }
 #restaurant-info {
   position: absolute;
-  left: 30px;
-  top: 200px;
+  top: 150px;
   width: 350px;
   height: auto;
-  background: white;
+  background: #fef5ed;
   padding: 15px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-  border-radius: 5px;
+  border-radius: 45px;
   display: none; 
   z-index: 1000;
   word-wrap: break-word;
-  font-size: 32px;
+  font-size: 31px;
+}
+
+.menuSquare {
+  top: 20%;
+  margin-left: 1.4%;
+  width: 450px;
+  height: 700px;
+  background-color: #c69c6d;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  border-radius: 45px;
+}
+.menuSquare2 {
+  top: 36%;
+  width: 420px;
+  height: 535px;
+  background-color: #fef5ed;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  border-radius: 45px;
+}
+.menuLine {
+  top: 33%;
+  width: 410px;
+  height: 6px;
+  background-color: #fef5ed;
+  z-index: 2;
+  display: flex;
+  position: fixed;
+  border-radius: 45px;
+}
+.textForSquare {
+  margin-top: 3%;
+  color: #fef5ed;
+  font-size: 90px;
+  z-index: 2;
+}
+.textForSquare2 {
+  margin-top: 39%;
+  color: #c69c6d;
+  font-size: 28px;
+  z-index: 3;
+  position: absolute;
+  word-wrap: break-word;
 }
 
 
-
-
-
-
+.reviewSquare {
+  top: 20%;
+  margin-left: 74.6%;
+  width: 450px;
+  height: 700px;
+  background-color: #c69c6d;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  border-radius: 45px;
+}
+.reviewSquare2 {
+  top: 36%;
+  width: 420px;
+  height: 535px;
+  background-color: #fef5ed;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  border-radius: 45px;
+}
+.reviewLine {
+  top: 33%;
+  width: 410px;
+  height: 6px;
+  background-color: #fef5ed;
+  z-index: 2;
+  display: flex;
+  position: fixed;
+  border-radius: 45px;
+}
+.textForSquareReview {
+  margin-top: 3%;
+  color: #fef5ed;
+  font-size: 90px;
+}
