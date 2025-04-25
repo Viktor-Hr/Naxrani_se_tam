@@ -94,6 +94,7 @@ h1
 .dropdown {
   position: relative;
   display: inline-block;
+  z-index: 9999;
 }
 
 .button-dropdown {
@@ -104,7 +105,7 @@ h1
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   padding: 10px;
-  z-index: 1000;
+  z-index: 9999;
   right: 0;
 }
 
@@ -116,6 +117,7 @@ h1
   color: #c69c6d;
   font-size: 24px;
   border-radius: 15px;
+  z-index: 3;
 }
 
 
@@ -126,7 +128,6 @@ h1
 
 .dropdown:hover .button-dropdown {
   display: block;
-  
 }
 
 
