@@ -30,15 +30,25 @@
     </div>
 
     <div class="rectangle"></div>
-
-    <div id="restaurant-info">
-        <h2 id="res-name"></h2>
-        <p><strong>Меню:</strong> <span id="res-menu"></span></p>
-        <p><strong>Адрес:</strong> <span id="res-address"></span></p>
-        <p><strong>Телефон:</strong> <span id="res-phone"></span></p>
+    <div class="menuSquare">
+        <div id="restaurant-info">
+            <h2 id="res-name"></h2>
+            <p><strong>Меню:</strong> <span id="res-menu"></span></p>
+            <p><strong>Адрес:</strong> <span id="res-address"></span></p>
+            <p><strong>Телефон:</strong> <span id="res-phone"></span></p>
+        </div>
+        <div class="menuLine"></div>
+        <div class="menuSquare2"></div>
+        <div class="textForSquare">Меню</div>
+        <div class="textForSquare2">Все още не е избрано заведение</div>
     </div>
 
-    
+    <div class="reviewSquare">
+        <div class="reviewLine"></div>
+        <div class="reviewSquare2"></div>
+        <div class="textForSquareReview">Оценки</div>
+    </div>
+
 
     <div id="map"></div>
 
